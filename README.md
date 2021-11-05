@@ -1,53 +1,34 @@
 # SalesForce-StripeHandler
 
 
-### Sections
-[Challenge Overview](/README.md)
 
-[Section 1: Sell concert tickets](/README-pt1-concerttickets.md)
-
-[Section 2: Sell video courses](README-pt2-videopurchase.md)
-
-[Section 3: Lesson signup](README-pt3-lessonsignup.md)
-
-[Section 4: Lesson payment capture](README-pt4-paymentcapture.md)
-
-[Section 5: Lesson account management](README-pt5-accountmanagement.md)
-
-[Section 6: Lesson Reporting](README-pt6-reporting.md)
-
-# Getting started
-To goal of this coding challenge is to complete the app started in this repo, a website for a music store.  To get started: 
-
-* Read this doc to get an overview of how the challenge is set up. 
-* Complete all sections of the challenge. When you've finished, deploy your solution and push it back to this repo.
+## Installing
 
 
-**Getting Help**
+**1. Deploy the StripeHandler project to salesforce**
 
-If you need any help please reach out to verification@stripe.com 
+**2. Create a Named Credential**
 
-# Challenge Overview
+Navigate to  `https://<your_instance_name>.lightning.force.com/lightning/setup/NamedCredential/home`
 
-Looking to grow their business a US-based music school wants to expand their online presence to include selling instructional videos, concert tickets and by offering online lessons. 
+Then Click `New Named Credential`
+Set:
+Label: `Stripe_Secret_API_Key`
+Name: `Stripe_Secret_API_Key`
+Identity Type: `Named Principle`
+Authentication Protocol: `Password Authentication`
+UserName: `<Your Secret Key from stripe> e.g sk_testsldigjssdlgijsdgli`
+Password: `Single space, this will set the password to emtpy and this is what we want`
 
-# Using the provided starter code
 
-Within the code directory you'll find the [starter code](code/) for client and server you selected to complete the challenge.
 
-The README for each section of the challenge provides more information about the starter code specific for that section. 
 
-We hope the starter code is helpful to you, but feel free to use a different framework if that's easier for you.  Please let us know in the feedback doc why you decided to not use the starter code and how we could make it better.
 
-## Running locally
 
-As a first step in completing the challenge we recommend you get your local server up and running:
+you will find an example for your **.env** file. Make a copy of `.env.example` at the same level and rename it to `.env`.
 
-**1. First checkout the repo and configure the environment variables:**
+For example: `https://<your_instance_name>.lightning.force.com/lightning/setup/NamedCredential/home`
 
-Inside `./code/server` you will find an example for your **.env** file. Make a copy of `.env.example` at the same level and rename it to `.env`.
-
-For example:
 
 ```
 cp .env.example .env
