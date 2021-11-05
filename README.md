@@ -29,73 +29,65 @@
 
 ![NamedCred](Screenshots/NamedCredentials.gif)
 
+**3. Configure Webhooks**
+Navigate to:
+`https://<Your_instance_name>lightning.force.com/lightning/setup/CustomDomain/home`
+
+Create a new Site
+
+Fill out the Site form
+
+Make sure to check the active box
+
+Click `Save`
+
+Click on `public access seetings`
+
+Click `enable apex class Access`
+
+Add the `StripeWebhookHandler`
+
+Click `Save`
+
+Navigate back to Sites and copy the URL for this site
+
+Open the stripe dashboard dashboard.stripe.com
+
+Click on `developers`
+
+Click the `webhooks` on the navigation bar
+
+Click `add an endpoint`
+
+For the endpoint url paste in the url for the site you just created
+
+Then append `/services/apexrest/Stripe/Webhook/Processor/` to the end of the url. 
+
+This will direct posts from the webhook to the webhook handler. 
+
+Add in the events you want this webhook to process. The handler can handle all stripe events as of November 5th 2021. 
+
+Once events have been added click `add endpoint`. 
+
+From the webhook in stripe click `Reveal` under the Signing Secret
+
+Copy the Signing Secret value
+
+From Visual Studios open the project and navigate to force-app/main/default -> classes -> StripeWebhookHandler.cls
+
+Paste the Signing Secret in as a string value into the `WebhookKey` variable
+
+Save the file 
+
+Deploy the file to the Org
+
+Navigate back to the Stripe Webhook we created and send a test webhook
+
+If the return was a 200 status code with a response of ‘webhook was processed’ the configuration was successful and we can now process events from Stripe to Salesforce
+
+![image](Screenshots/StripeWebhookConfig.gif))
 
 
+## Usage Examples
 
 
-you will find an example for your **.env** file. Make a copy of `.env.example` at the same level and rename it to `.env`.
-
-For example: `https://<your_instance_name>.lightning.force.com/lightning/setup/NamedCredential/home`
-
-
-```
-cp .env.example .env
-```
-
-Replace the placehold variables in the .env file wtih your keys: 
-
-```
-STRIPE_PUBLISHABLE_KEY=<replace-with-your-publishable-key>
-STRIPE_SECRET_KEY=<replace-with-your-secret-key>
-STRIPE_WEBHOOK_SECRET=<replace-with-your-webhook-secret>
-```
-
-We've also provided a config file, `config.json` which contains some constants used by the video and concert tickets sections of the app.  See the server file for examples of how to load these values. 
-
-**For Vanilla stack client**
-
-`STATIC_DIR` tells the server where to the static files are located and does not need to be modified unless you restructure the directories.
-
-**2. Follow the server instructions on how to run:**
-
-Please follow the instructions in the README you'll find in the code/server folder on how to run your server.
-
-With your server running the page should look like this:
-
-**Note**: if you are working with the react client, after you start you server, please follow  the instructions in the README you'll find in the code/client folder on how to start the react client.
-
-![Overview](screenshots/MusicShopOverview.gif)
-
-**3. [Optional] Run a webhook locally:**
-
-We recommend using the Stripe CLI to easily spin up a local webhook.
-
-First [install the CLI](https://stripe.com/docs/stripe-cli) and [link your Stripe account](https://stripe.com/docs/stripe-cli#link-account).
-
-```
-stripe listen --forward-to localhost:4242/webhook
-```
-
-The CLI will print a webhook secret key to the console. Set `STRIPE_WEBHOOK_SECRET` to this value in your .env file.
-
-You should see events logged in the console where the CLI is running.
-
-
-## Your Stripe Account
-
-We'll run test mode transaction on your Stripe account to test your solution. If this activity might disrupt your other work you may want to spin up a separate Stripe account just for these challenges.  We recommend you keep the account you use for challenges up to date with the latest API version. 
-
-
-## Submitting your challenge
-
-When you are done there are 3 steps to submitting your solution:
-
-* Open a pr with the changes you want to merge into master
-* let us know you’ve completed the exam by filling in the template provided. You can either do one push or one per challenge completed. We advise you to create a separate branch in which you can work your solution before merging it into master.
-* Merge your changes to master.
-* To ensure your challenge can be evaluated, we advise you to run the test scripts in `./test`.
-
-**Note**: Please make sure all your features run in the latest version of Google Chrome.
-
-**Navigation**
-[Continue to Section 1: Sell Concert Tickets](/README-pt1-concerttickets.md)
