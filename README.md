@@ -9,23 +9,25 @@
 
 **2. Create a Named Credential**
 
-Navigate to  `https://<your_instance_name>.lightning.force.com/lightning/setup/NamedCredential/home`
+  a. Navigate to  `https://<your_instance_name>.lightning.force.com/lightning/setup/NamedCredential/home`
 
-Then Click `New Named Credential`
-Set:
-Label: `Stripe_Secret_API_Key`
+  b.   Then Click `New Named Credential`
+  
+   **Values for Named Credential**  
+  
+  Label: `Stripe_Secret_API_Key`
 
-Name: `Stripe_Secret_API_Key`
+  Name: `Stripe_Secret_API_Key`
 
-Identity Type: `Named Principle`
+  Identity Type: `Named Principle`
 
-Authentication Protocol: `Password Authentication`
+  Authentication Protocol: `Password Authentication`
 
-UserName: `<Your Secret Key from stripe> e.g sk_testsldigjssdlgijsdgli`
+  UserName: `<Your Secret Key from stripe> e.g sk_testsldigjssdlgijsdgli`
 
-Password: `Single space, this will set the password to emtpy and this is what we want`
+  Password: `Single space, this will set the password to emtpy and this is what we want`
 
-
+![NamedCred](Screenshots/NamedCredentials.gif)
 
 
 
