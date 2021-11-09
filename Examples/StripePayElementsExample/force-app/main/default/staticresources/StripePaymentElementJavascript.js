@@ -8,7 +8,7 @@ const urlParams = new URLSearchParams(queryString);
 const client_key = urlParams.get('clientSecret')
 j$(document).ready( function () {
 	// Set Publishable key of your Stripe Account.
-stripe = Stripe('pk_test_51JFfvjKIX4HOzg7MJ70vlPxmeqA5eGm6n8xebat88fb6E4cKu5Q95BzR7gV02rYQaZ29xUFFHwECVO5Yl8JKZnoy00VL3iwQkr');
+stripe = Stripe('pk_test_key');
 const options = {
     clientSecret: client_key,
   };
