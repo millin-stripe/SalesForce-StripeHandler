@@ -1,1 +1,1 @@
-
+![NamedCred](Screenshots/NamedCredentials.gif)
