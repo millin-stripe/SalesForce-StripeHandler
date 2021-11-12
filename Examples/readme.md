@@ -1,1 +1,1 @@
-![NamedCred](Screenshots/NamedCredentials.gif)
+![NamedCred](./Screenshots/NamedCredentials.gif)
