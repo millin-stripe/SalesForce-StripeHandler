@@ -1,6 +1,6 @@
 Example Videos Use and Install
  
-[Salesforce Stripe API Handler: Element Example: Payment Element Example Demo](https://youtu.be/mC-Lhi-N_iE)
+[Salesforce Stripe API Handler: Payment Element Example Demo](https://youtu.be/mC-Lhi-N_iE)
 
 [Salesforce Stripe API Handler: Element Example](https://youtu.be/fpeQQs0vZtc)
 
